@@ -10,17 +10,12 @@ int main() {
       scanf("%i", &num);
 
       if (num < 0) {
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),78); 
         printf("Atente-se a especificacao!\n");
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),15); 
       }
 
-/*
-      Verifica se a entrada é um número inteiro
-      if (!isdigit(num)) {
-        printf("Entrada invalida. Digite um numero inteiro.\n");
-      }
-*/
-
-    } while (num < 0); // Condição atualizada
+    } while (num < 0);
 
     integralDivisionCounter = 0;
     for (j = 1; j < num; j++) {
@@ -31,13 +26,18 @@ int main() {
       }
     }
     printf("E o numero %i eh divisivel por ele mesmo.\n", num);
-    if (integralDivisionCounter == 1)
+    
+    if (integralDivisionCounter <= 1)
     {
-        printf("Portanto, %i eh um numero primo!\n\n");
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10); 
+        printf("Portanto, %i eh um numero primo!\n\n", num);
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),15); 
     }
     else
     {
-        printf("Entao, %i NAO eh um numero primo!\n\n");
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),12); 
+        printf("Entao, %i NAO eh um numero primo!\n\n", num);
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),15); 
     }
     
     
